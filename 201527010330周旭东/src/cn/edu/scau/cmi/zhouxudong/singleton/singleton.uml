@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="singleton">
+  <packagedElement xmi:type="uml:Package" xmi:id="__qE4oFKaEei_3tbeyrgCZA" name="cn">
+    <packagedElement xmi:type="uml:Package" xmi:id="__qGt0FKaEei_3tbeyrgCZA" name="edu">
+      <packagedElement xmi:type="uml:Package" xmi:id="__qHU4FKaEei_3tbeyrgCZA" name="scau">
+        <packagedElement xmi:type="uml:Package" xmi:id="__qHU4VKaEei_3tbeyrgCZA" name="cmi">
+          <packagedElement xmi:type="uml:Package" xmi:id="__qHU4lKaEei_3tbeyrgCZA" name="zhouxudong">
+            <packagedElement xmi:type="uml:Package" xmi:id="__qHU41KaEei_3tbeyrgCZA" name="singleton">
+              <packagedElement xmi:type="uml:Association" xmi:id="__wK5kFKaEei_3tbeyrgCZA" memberEnd="__ruecFKaEei_3tbeyrgCZA __wLgoFKaEei_3tbeyrgCZA">
+                <ownedEnd xmi:id="__wLgoFKaEei_3tbeyrgCZA" name="Chairman" type="__qH78FKaEei_3tbeyrgCZA" association="__wK5kFKaEei_3tbeyrgCZA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="__qH78FKaEei_3tbeyrgCZA" name="Chairman">
+                <ownedAttribute xmi:id="__ruecFKaEei_3tbeyrgCZA" name="chairman" visibility="private" isStatic="true" type="__qH78FKaEei_3tbeyrgCZA" association="__wK5kFKaEei_3tbeyrgCZA"/>
+                <ownedAttribute xmi:id="__uPm8FKaEei_3tbeyrgCZA" name="chairmanName" visibility="private">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                </ownedAttribute>
+                <ownedOperation xmi:id="__uamEFKaEei_3tbeyrgCZA" name="getInstance" visibility="public" isStatic="true">
+                  <ownedParameter xmi:id="__uamEVKaEei_3tbeyrgCZA" name="name">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="__uamElKaEei_3tbeyrgCZA" name="return" type="__qH78FKaEei_3tbeyrgCZA" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="__ub0MFKaEei_3tbeyrgCZA" name="toString" visibility="public">
+                  <ownedParameter xmi:id="__ub0MVKaEei_3tbeyrgCZA" name="return" direction="return">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="singleton2">
+  <packagedElement xmi:type="uml:Package" xmi:id="_pTgCwFKbEei_3tbeyrgCZA" name="cn">
+    <packagedElement xmi:type="uml:Package" xmi:id="_pTgp0FKbEei_3tbeyrgCZA" name="edu">
+      <packagedElement xmi:type="uml:Package" xmi:id="_pTgp0VKbEei_3tbeyrgCZA" name="scau">
+        <packagedElement xmi:type="uml:Package" xmi:id="_pTgp0lKbEei_3tbeyrgCZA" name="cmi">
+          <packagedElement xmi:type="uml:Package" xmi:id="_pTgp01KbEei_3tbeyrgCZA" name="zhouxudong">
+            <packagedElement xmi:type="uml:Package" xmi:id="_pTgp1FKbEei_3tbeyrgCZA" name="singleton">
+              <packagedElement xmi:type="uml:Class" xmi:id="_pTgp1VKbEei_3tbeyrgCZA" name="Marshal">
+                <ownedAttribute xmi:id="_pUycMFKbEei_3tbeyrgCZA" name="marshalName" visibility="private">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_pUzDQFKbEei_3tbeyrgCZA" name="array" visibility="private" isStatic="true" type="_pTgp1VKbEei_3tbeyrgCZA" association="_pWQb0FKbEei_3tbeyrgCZA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pUzDQVKbEei_3tbeyrgCZA" value="*"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pUzDQlKbEei_3tbeyrgCZA"/>
+                </ownedAttribute>
+                <ownedOperation xmi:id="_pUzqUFKbEei_3tbeyrgCZA" name="getInstance" visibility="public" isStatic="true">
+                  <ownedParameter xmi:id="_pUzqUVKbEei_3tbeyrgCZA" name="return" type="_pTgp1VKbEei_3tbeyrgCZA" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_pU04cVKbEei_3tbeyrgCZA" name="random" visibility="public" isStatic="true">
+                  <ownedParameter xmi:id="_pU04clKbEei_3tbeyrgCZA" name="return" direction="return">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:id="_pU1fgFKbEei_3tbeyrgCZA" name="toString" visibility="public">
+                  <ownedParameter xmi:id="_pU1fgVKbEei_3tbeyrgCZA" name="return" direction="return">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_pWQb0FKbEei_3tbeyrgCZA" memberEnd="_pUzDQFKbEei_3tbeyrgCZA _pWQb0VKbEei_3tbeyrgCZA">
+                <ownedEnd xmi:id="_pWQb0VKbEei_3tbeyrgCZA" name="Marshal" type="_pTgp1VKbEei_3tbeyrgCZA" association="_pWQb0FKbEei_3tbeyrgCZA"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pTjtIFKbEei_3tbeyrgCZA" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_pTjtIVKbEei_3tbeyrgCZA" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_pTjtIlKbEei_3tbeyrgCZA" name="Random"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
