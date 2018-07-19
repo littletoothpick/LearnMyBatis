@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 这个代码提示经常蜜汁失灵，真是烦的要死，虽然前面的声明就是代码提示的，但是竟然还要在环境里弄	 -->
+
+
+
+<configuration>
+    <!-- 加载外部配置文件 （下面的是是在项目根目录下的）
+    先加载property属性的，再加载resource文件指向的属性值，当两者有同一个Name属性名时，resource中的值覆盖property中的
+    -->
+	<properties resource="db.properties">
+	<!-- preperties里有多个property -->
+    
+	</properties>
+	
+	<!-- 配置全局参数：开启二级缓存、延迟加载 -->
+	<!-- <settings>
+	<setting name="" value=""/>
+	</settings> -->
+	
+	<!-- 全局参数：很有用的一个，就是给某个类取别名，让名称不要那么长 
+	一般都是给mapper中参数类型和返回类型用的
+	-->
+	
+	<typeAliases>
+	<!-- <typeAlias type="com.edu.scau.zhouxudong.model.Student" alias="Student"/> -->
+	<!-- 给一个包批量取名字 不区分大小写，以后就直接写这个包下的类名就好了，比如com.edu.scau.zhouxudong.dao.Student
+		   可以直接写成Student或Student-->
+	<package name="com.edu.scau.zhouxudong.dao"  />
+	</typeAliases>
+	
+	
+	<!-- 环境：一个environments可以包括多个environment -->
+	<environments default="development">
+		<environment id="development">
+		    <!-- 事务管理 ：JDBC有事务管理的功能，增删改查；还有一个叫做MANAGED(托管)，用Spring来管理；
+		                           现在是单独工作，所以只用JDBC-->
+			<transactionManager type="JDBC" />
+			<!-- 数据源:POOLED（操作一次数据库，然后在池子里存着数据库已经连接上的状态，给下次使用，使用时，从池子里面取）
+			          UNPOOLED（操作一次数据库，就要连接一次数据库，然后关闭）也就是是否保持连接状态的区别
+                      JNDI：（没用过）从外部的连接里-->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+			
+		</environment>
+		
+	</environments>
+	
+	<!-- 映射文件：定义sql语句的映射文件 -->
+	<mappers>
+		<!-- <mapper resource="org/mybatis/example/BlogMapper.xml" /> -->
+		<mapper resource="com/edu/scau/zhouxudong/dao/StudentMapper.xml"/>
+	</mappers>
+</configuration>

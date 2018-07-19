@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 这里的namespace似乎是可以随便起的？ -->
+<mapper namespace="test">
+	<!-- 定义select查询语句 id:语句的唯一标识 parameterType:参数类型 resultType:返回类型（对应的类，这里体现了mybatis更加的面向对象，而不是数据库），这里的返回值是利用的无参构造函数，所以model包下的student类不能把无参构造函数去掉 
+		#{}：占位符代表的是一个变量，类似于prepareStatement中的? 当仅存在一个参数时，#{}中的参数名可以为任意值 -->
+	<select id="getStudentById" parameterType="int"
+		resultType="com.edu.scau.zhouxudong.model.Student">
+		select * from student where id=#{id}
+	</select>
+
+
+
+	
+
+	<!-- update更新语句 参数是student类，想象一个场景，我把一个已经改好的类给你，你就按我现在改好的类，更新对应id的类就好了 -->
+	<update id="updateStudent" parameterType="com.edu.scau.zhouxudong.model.Student">
+		<!-- 这个#{name}是我传进来的student实例的name -->
+		update student set name=#{name} where id=#{id}
+	</update>
+
+	<!-- 删除 与select的相似 -->
+	<delete id="deleteStudent" parameterType="int">
+		delete from student
+		where id=#{id}
+	</delete>
+     
+    <!-- 插入 用insert 参数是student类，想象一个场景，我把一个已经准备好的类给你，你就按我现在类里面的信息，插入到数据表中 -->
+	<insert id="insertStudent" parameterType="com.edu.scau.zhouxudong.model.Student">
+		insert into Student(id,name) values(#{id},#{name})
+		<!-- 这个selectkey的作用在于可以在新建一个student实例时，如果不给id赋值，默认是0，但是插入数据库的时候，如果插入成功，有时候是需要获取刚插入的数据的id，此标签的作用就是这样 -->
+		<!-- 我不知道这里的insert蜜汁报错的原因，如果以后要用就直接拷贝这段代码。。。 -->
+		<selectKey keyProperty="id" order="AFTER" resultType ="int">
+			  SELECT LAST_INSERT_ID() AS ID		  
+		</selectKey>   
+		
+		  
+	</insert>
+	
+
+</mapper>
